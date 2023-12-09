@@ -10,18 +10,25 @@ def index(request):
     return render(request, 'main/index.html', {})
 
 def signup(request):
-    form = RegisterForm(request.POST)
+    if request.method == 'GET':
+        print("User to be created")
+        form = RegisterForm()
+        return render(request, 'registration/signup.html', {'form': form})
+        
     if request.method == 'POST':
+        form = RegisterForm(request.POST)
         if form.is_valid():
             print("User is valid")
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
             form.save()
-            new_user = authenticate(username=username, password=password)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')    
+            new_user = authenticate(request, username=username, password=password)
             if new_user is not None:
                 authlogin(request, new_user)
-                redirect('home/')
                 print("User created")
-    form = RegisterForm()
-    print("User not created")
-    return render(request, 'registration/signup.html', {'form': form})
+                return redirect('home/')
+                
+    else:
+        form = RegisterForm()
+        print("User not created")
+        return render(request, 'registration/signup.html', {'form': form})
