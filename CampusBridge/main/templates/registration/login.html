@@ -23,15 +23,16 @@
     <div class="wrapper">
         <div class="form-box login">
             <h2>Login</h2>
-            <form method='POST' action="#">
+            <form method='POST' id='login-form'>
+                {% csrf_token %}
                 <div class="input-box">
                     <span class='icon'><ion-icon name="mail"></ion-icon></span>
-                    <input type="email" required>
+                    {{form.username}}
                     <label>Email</label>
                 </div>
                 <div class="input-box">
                     <span class='icon'><ion-icon name="lock-closed"></ion-icon></span>
-                    <input type="password" required>
+                    {{form.password}}
                     <label>Password</label>
                 </div>
                 <div class="remember-forgot">
@@ -43,7 +44,6 @@
                 <div class="login-register">
                     <p>Don't have an account? Click<a href="/signup" class='register-link'> here</a> to register</p>
                 </div>
-                {% csrf_token %}
             </form>
         </div>
     </div>

@@ -7,6 +7,27 @@ from django.forms.fields import EmailField
 from django.forms.forms import Form
     
 
+class LoginForm(forms.Form):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({
+            'id':'LoginUsername',
+            'type':"text",
+            'required':'',
+            'maxlength':'16',
+        })
+        self.fields['password'].widget.attrs.update({
+            'id':'LoginPassword',
+            'type':"password",
+            'required':'',
+        })
+    username = forms.CharField(required=True)
+    password = forms.CharField(required=True, widget=forms.PasswordInput)
+    
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+
 
 class RegisterForm(UserCreationForm):
     def __init__(self, *args, **kwargs):
