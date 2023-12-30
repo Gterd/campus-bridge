@@ -42,6 +42,15 @@ header {
     margin-left: 40px;
 }
 
+.logged-in-icons {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+}
+
 .navigation a::after {
     content: '';
     position: absolute;
@@ -62,6 +71,10 @@ header {
     transform: scaleX(1);
 }
 
+.navigation a.no-underline::after {
+    transition: none;
+    background: transparent;
+}
 .navigation .btnLogin-popup {
     width: 130px;
     height: 50px;

@@ -19,7 +19,7 @@ def userlogin(request):
             user = authenticate(request, username=username, password=password)
             authlogin(request, user)
             print("User logged in")
-            return redirect('user/')
+            return redirect('index')
         else:
             form = LoginForm()
             print("User not created")
@@ -41,7 +41,7 @@ def index(request):
 @login_required(login_url='login/')
 def indexLoggedIn(request):
     
-    return render(request, 'main/indexloggedin.html', {})
+    return render(request, 'main/index.html', {})
 
 def signup(request):
     if request.method == 'GET':
