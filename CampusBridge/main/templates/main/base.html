@@ -7,9 +7,6 @@
     </title>
     <link rel = 'stylesheet' href='../../static/css/styles.css'>
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body style="background-image: url('../../static/images/college-background.jpg');">
     <header class="flex justify-between items-center">
         <h2 class="logo">Campus Bridge</h2>
         <nav class="navigation flex">
@@ -36,11 +33,21 @@
             </div>
         </nav>
     </header>
-    <main>
+</head>
+
+<body class="flex flex-col min-h-screen" style="background-image: url('../../static/images/college-background.jpg');">
+    
+    <main class="flex-grow">
         {% block content %}
         {% endblock %}
     </main>
-
+    <footer class="bg-gray-100">
+        <div class="w-full mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
+            <div class="footer-left mb-12 md:mb-0">
+                <h2 class="mb-5 uppercase text-lg">About Us in todays</h2>
+            </div>
+        </div>
+    </footer>
     <script src='/static/js/script.js'></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

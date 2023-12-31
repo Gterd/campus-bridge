@@ -15,6 +15,10 @@ body {
     background: url('../images/college-background.jpg');
 }   
 
+main {
+    flex-grow: 1;
+}
+
 header {
     position: fixed;
     top: 0;
