@@ -10,10 +10,10 @@
     <header class="flex justify-between items-center">
         <h2 class="logo">Campus Bridge</h2>
         <nav class="navigation flex">
-            <a href="/home">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a id="header-item" href="/home">Home</a>
+            <a id="header-item" href="#">About</a>
+            <a id="header-item" href="#">Services</a>
+            <a id="header-item" href="#">Contact</a>
             <div class="flex" id="options">
                 {% if user.is_authenticated %}
                 <a href="#" class="no-underline">
@@ -35,19 +35,34 @@
     </header>
 </head>
 
-<body class="flex flex-col min-h-screen" style="background-image: url('../../static/images/college-background.jpg');">
-    
-    <main class="flex-grow">
-        {% block content %}
-        {% endblock %}
-    </main>
-    <footer class="bg-gray-100">
-        <div class="w-full mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
-            <div class="footer-left mb-12 md:mb-0">
-                <h2 class="mb-5 uppercase text-lg">About Us in todays</h2>
+<body>
+    <div id="main-content" class="flex flex-col min-h-screen">
+        <main class="flex-grow">
+            {% block content %}
+            {% endblock %}
+        </main>
+    </div>
+    <div>
+        <footer class="bg-gray-100">
+            <div class="max-w-6xl mx-auto py-10 px-6 xl:px-0 md:flex justify-between">
+                <div class="footer-left mb-12 md:mb-0">
+                    <h2 class="mb-5 uppercase text-lg">About Us</h2>
+
+                    <p class="text-gray-700">this is a test</p>
+                </div>
+
+                <div class="footer-right">
+                    <h2 class="mb-5 uppercase text-lg">Social links</h2>
+
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-purple-500 hover:text-purple-800">FaceBook</a></li>
+                        <li><a href="#" class="text-purple-500 hover:text-purple-800">Twitter</a></li>
+                        <li><a href="#" class="text-purple-500 hover:text-purple-800">Instagram</a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
     <script src='/static/js/script.js'></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
