@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login as authlogin, logout as authlogout
 from django.contrib.auth.decorators import login_required
+from product.models import product, Category
 
 def userlogin(request):
     if request.method == 'GET':
@@ -36,7 +37,8 @@ def userlogout(request):
     return redirect('login/')
 
 def index(request):
-    return render(request, 'main/index.html', {})
+    products = product.objects.all()[0:8]
+    return render(request, 'main/index.html', {'products': products})
 
 @login_required(login_url='login/')
 def indexLoggedIn(request):
