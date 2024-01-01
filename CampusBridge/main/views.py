@@ -40,11 +40,6 @@ def index(request):
     products = product.objects.all()[0:8]
     return render(request, 'main/index.html', {'products': products})
 
-@login_required(login_url='login/')
-def indexLoggedIn(request):
-    
-    return render(request, 'main/index.html', {})
-
 def signup(request):
     if request.method == 'GET':
         print("User to be created")
@@ -70,3 +65,12 @@ def signup(request):
         form = RegisterForm()
         print("User not created")
         return render(request, 'registration/signup.html', {'form': form})
+
+def shop(request):
+    products = product.objects.all()
+    
+    context = { 'products': products,
+                'Category': Category
+    }
+    return render(request, 'main/shop.html', context)
+

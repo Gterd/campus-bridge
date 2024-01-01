@@ -28,7 +28,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 99;
+    z-index: 1;
     backdrop-filter: blur(20px);
 }
 
@@ -266,6 +266,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    padding-top: 60px;
     background: url('../images/college-background.jpg');
 }
 
