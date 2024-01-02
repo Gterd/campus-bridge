@@ -1,0 +1,26 @@
+{% extends "main/base_shop.html" %}
+{% block content %}
+<div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
+    <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
+        <img class="rounded-xl" src="">
+    </div>
+    
+    <div class="information w-full">
+        <h1 class="text-2xl">Product name</h1>
+        <p class="mt-1 text-gray-400">Price</p>
+        <p class="mt-6 mb-10 text-gray-700">Product description</p>
+        <a href="#" class="py-3 px-5 w-52 h-20 bg-gray-700 border-white border-2 outline-none rounded-xl cursor-pointer text-xl text-white font-medium ml-10 duration-500 hover:bg-gray-400">
+            Add to cart
+        </a>
+        <!--form action="" method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="">
+            <input type="hidden" name="product_name" value="">
+            <input type="hidden" name="product_price" value="">
+            <input type="hidden" name="product_image" value="">
+            <input type="hidden" name="product_quantity" value="">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to cart</button>
+        </form-->
+</div>
+
+{% endblock %}
