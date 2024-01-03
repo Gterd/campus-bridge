@@ -1,11 +1,11 @@
 {% extends "main/base_shop.html" %}
 {% block content %}
-<div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
-    <div class="left-14 top-36 images mb-0 w-2/6">
+<div class="max-w-6xl absolute mx-auto flex flex-wrap py-0 px-0 top-28 left-12">
+    <div style="top: 0px; margin-right: 1px; margin-left: 0px; width: 22rem; height: 22rem;" class="relative images mb-0">
         <img class="rounded-xl ml-0" src="https://www.getmulberry.com/pseo-static/production/image-collection/request_hash=597acaffbbe611c04a027afd5aeaae5bce007c559f73abd17211498f77b6117f/image_hash=d193494d9f7f7fa266bebb4a04a829ea3ce6c3eed0f7404b70437da15e8e2f80/raw_img.jpg">
     </div>
     
-    <div style="width: 44rem" class="information right-32 top-32">
+    <div style="width: 48rem; margin-left: 30px; margin-top: 15px" class="information relative">
         <h1 class="text-6xl">{{ product.name }}</h1>
         <p class="mt-1 text-3xl text-gray-400">₦{{ product.get_display_price }}</p>
         {% if product.description %}

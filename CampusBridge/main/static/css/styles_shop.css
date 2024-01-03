@@ -19,6 +19,7 @@ header {
     z-index: 1;
     border-bottom-width: 1px;
     background-color:#fff;
+    overflow: auto;
 }
 
 .logo {
