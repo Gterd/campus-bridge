@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from .forms import RegisterForm, LoginForm
 from django.contrib.auth import authenticate, login as authlogin, logout as authlogout
 from django.contrib.auth.decorators import login_required
-from product.models import product, Category
+from product.models import Product, Category
 from django.db.models import Q
 
 def userlogin(request):
@@ -38,7 +38,7 @@ def userlogout(request):
     return redirect('login/')
 
 def index(request):
-    products = product.objects.all()[0:8]
+    products = Product.objects.all()[0:8]
     return render(request, 'main/index.html', {'products': products})
 
 def signup(request):
@@ -69,7 +69,7 @@ def signup(request):
 
 def shop(request):
     categories = Category.objects.all()
-    products = product.objects.all()
+    products = Product.objects.all()
     
     active_category = request.GET.get('category', '')
     

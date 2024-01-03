@@ -18,7 +18,7 @@ header {
     align-items: center;
     z-index: 1;
     border-bottom-width: 1px;
-    background-color: #fff;
+    background-color:#fff;
 }
 
 .logo {
@@ -101,7 +101,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding-top: 60px;
     background: white;
 }
 

@@ -1,17 +1,21 @@
 {% extends "main/base_shop.html" %}
 {% block content %}
 <div class="max-w-6xl mx-auto flex flex-wrap py-6 px-6 xl:px-0">
-    <div class="images w-full mb-6 lg:mb-0 lg:w-3/5">
-        <img class="rounded-xl" src="">
+    <div class="left-14 top-36 images mb-0 w-2/6">
+        <img class="rounded-xl ml-0" src="https://www.getmulberry.com/pseo-static/production/image-collection/request_hash=597acaffbbe611c04a027afd5aeaae5bce007c559f73abd17211498f77b6117f/image_hash=d193494d9f7f7fa266bebb4a04a829ea3ce6c3eed0f7404b70437da15e8e2f80/raw_img.jpg">
     </div>
     
-    <div class="information w-full">
-        <h1 class="text-2xl">Product name</h1>
-        <p class="mt-1 text-gray-400">Price</p>
-        <p class="mt-6 mb-10 text-gray-700">Product description</p>
-        <a href="#" class="py-3 px-5 w-52 h-20 bg-gray-700 border-white border-2 outline-none rounded-xl cursor-pointer text-xl text-white font-medium ml-10 duration-500 hover:bg-gray-400">
-            Add to cart
-        </a>
+    <div style="width: 44rem" class="information right-32 top-32">
+        <h1 class="text-6xl">{{ product.name }}</h1>
+        <p class="mt-1 text-3xl text-gray-400">₦{{ product.get_display_price }}</p>
+        {% if product.description %}
+            <p class="mt-6 mb-10 text-gray-700">{{ product.description }}</p>
+        {% endif %}
+        <div>
+            <a href="#" class="py-3 px-5 w-52 h-20 bg-gray-700 border-white border-2 outline-none rounded-xl cursor-pointer text-xl text-white font-medium ml-10 duration-500 hover:bg-gray-400">
+                Add to cart
+            </a>
+        </div>
         <!--form action="" method="POST">
             {% csrf_token %}
             <input type="hidden" name="product_id" value="">
