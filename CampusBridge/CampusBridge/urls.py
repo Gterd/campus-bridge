@@ -8,4 +8,5 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('__reload__/', include("django_browser_reload.urls")),
     path('shop/<slug:slug>/', product, name='product'),
+    path('cart/', include('cart.urls')),
 ]
