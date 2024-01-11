@@ -1,0 +1,13 @@
+{% extends "main/base_shop.html" %}
+{% block content %}
+{% if user.is_authenticated %}
+<header class="absolute top-24 border-none justify-center text-4xl text-gray-700 uppercase font-medium">
+    {{user}}'s shopping cart
+</header>
+{% else %}
+<header class="absolute top-24 border-none justify-center text-4xl text-gray-700 uppercase font-medium">
+    shopping cart
+</header>
+
+{% endif %}
+{% endblock content %}

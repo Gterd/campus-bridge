@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ah-z)0hs^f$i!fhlq6ol+=*u1fgom^emeh1w80wraq2x6+j@8&
 DEBUG = True
 
 ALLOWED_HOSTS = []
-SESSION_COOKIE_AGE = 86400
+SESSION_COOKIE_AGE = 86500
 CART_SESSION_ID = 'cart'
 
 
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
+    'main',
     'tailwind',
     'theme',
     'django_browser_reload',
@@ -72,7 +72,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'cart.context_processors.cart'
+                'cart.context_processors.cart',
             ],
         },
     },

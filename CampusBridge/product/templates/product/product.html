@@ -11,16 +11,29 @@
         {% if product.description %}
             <p class="mt-6 mb-10 text-gray-700">{{ product.description }}</p>
         {% endif %}
-        <div>
-            <a 
-                href="#" class="py-3 px-5 w-52 h-20 bg-gray-700 border-white border-2 outline-none rounded-xl cursor-pointer text-xl text-white font-medium ml-10 duration-500 hover:bg-gray-400"
-                hx-get = "{% url "add_to_cart" product.id %}"
-                hx-target = "#menu-cart-button"
-                hx-swap = "outerHTML"
-            >
-                Add to cart
-            </a>
+        <div class="flex">
+                <button 
+                    href="#" class="py-3 px-5 w-46 h-16 bg-gray-700 border-white border-2 outline-none rounded-xl cursor-pointer text-xl text-white font-medium ml-10 duration-500 hover:bg-gray-400"
+                value = '{{product.id}}'
+                id = 'add-cart'
+                >
+                    Add to cart
+                </button>
+                <div class="dropdown max-w-20 ml-9 pl-2 pt-6 mt-0 relative w-full">
+                    <button class="dropdown-btn bg-gray-700 text-xl w-full border-none text-white flex justify-between items-center pt-1 pb-1 pr-3 pl-3 rounded-lg cursor-pointer hover:bg-gray-300 duration-500">
+                        <span>size</span>
+                        <span class="arrow  "></span>
+                    </button>
+                    <ul class="dropdown-content">
+                        <li><a href="#">XL</a></li>
+                        <li><a href="#">L</a></li>
+                        <li><a href="#">S</a></li>
+                        <li><a href="#">M</a></li>
+                        <li><a href="#">XS</a></li>
+                    </ul>
+                </div>
         </div>
+    </div>
         <!--form action="" method="POST">
             {% csrf_token %}
             <input type="hidden" name="product_id" value="">
@@ -31,5 +44,4 @@
             <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add to cart</button>
         </form-->
 </div>
-
 {% endblock %}

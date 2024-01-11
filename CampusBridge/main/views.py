@@ -38,8 +38,7 @@ def userlogout(request):
     return redirect('login/')
 
 def index(request):
-    products = Product.objects.all()[0:8]
-    return render(request, 'main/index.html', {'products': products})
+    return render(request, 'main/index.html')
 
 def signup(request):
     if request.method == 'GET':
