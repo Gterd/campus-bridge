@@ -1,13 +1,46 @@
 {% extends "main/base_shop.html" %}
 {% block content %}
 {% if user.is_authenticated %}
-<header class="absolute top-24 border-none justify-center text-4xl text-gray-700 uppercase font-medium">
-    {{user}}'s shopping cart
-</header>
+    <header style="top: 0rem;" class="relative border-none justify-center text-4xl text-gray-700 uppercase font-medium -z-10">
+        {{user}}'s shopping cart
+    </header>
 {% else %}
-<header class="absolute top-24 border-none justify-center text-4xl text-gray-700 uppercase font-medium">
-    shopping cart
-</header>
-
+    <header class="absolute top-24 border-none justify-center text-4xl text-gray-700 uppercase font-medium -z-10">
+        shopping cart
+    </header>
 {% endif %}
+<div class="w-full mx-auto flex flex-wrap items-start text-gray-700 py-6 px-6">
+    <div class="products w-3/4">
+        <div class="product mb-6 flex pr-6">
+            <a href="#"class="w-1/4">
+                <img src="1.jpeg" class="hover:shadow-lg rounded-xl">
+            </a>
+
+            <div class="w-3/4 pl-6">
+                <div class="flex justify-between">
+                    <a href="" class="text-lg">Product Name</a>
+                    <span class="mb-6 pt-1">$100.99</span>
+                </div>
+
+                <hr>
+                <div class="quantity mt-3 flex items-center space-x-4">
+                    <a href="#" class="px-2 border-2 rounded-md border-gray-700 border-solid duration-300 hover:text-white hover:bg-gray-700">-</a>
+                    <span>2</span>
+                    <a href="#" class="px-2 border-2 rounded-md border-gray-700 border-solid duration-300 hover:text-white hover:bg-gray-700">+</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="summary w-full p-6 rounded-xl mt-3">
+        <h2 class="uppercase text-lg mb-5">Summary</h2>
+
+        <div class="mb-6 flex justify-between">
+            <span class="font-semibold">Total</span>
+            <span>$100.99</span>
+        </div>
+
+        <a href="#" class="rounded-xl p-4 border-gray-700 border-solid border-2 text-gray-700 hover:text-white hover:bg-gray-700 duration-300">Checkout now</a>
+    </div>
+</div>
 {% endblock content %}
