@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <header class="flex justify-between items-center">
-        <h2 class="logo">Campus Bridge</h2>
+        <h2 class="logo"><span style="color: rgb(8, 28, 21)">Campus </span><span style="color: #fff;">Bridge</span></h2>
         <nav class="navigation flex">
             <a id="header-item" href="{% url "index" %}">Home</a>
             <a id="header-item" href="{% url "shop" %}">Shop</a>
@@ -57,5 +57,29 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        $(document).on('click', '#add-cart', function(e){
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '{% url 'cart_add' %}',
+                data: {
+                    product_id: $('#add-cart').val(),
+                    csrfmiddlewaretoken: '{{ csrf_token }}',
+                    action: 'post'
+                },
+        
+                success: function(json){
+                    console.log(json)
+                    document.getElementById("cart_quantity").textContent = json.qty
+                },
+        
+                error: function(xhr, errmsg, err){}
+        
+            });
+        })
+        
+        
+    </script>
 </body>
 </html>

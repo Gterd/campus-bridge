@@ -1,13 +1,13 @@
 {% extends "main/base.html" %}
 {% block content %}
-<div class="px-6 py-10 lg:py-20 bg-purple-none mt-20">
+<div style="color: rgb(45, 106, 79);" class="px-6 py-10 lg:py-20 bg-purple-none mt-20">
     <div class="max-w-3xl mx-auto text-center">
         {% if user.is_authenticated %}
-        <p class="mb-2 text-3xl lg:text-5xl text-white">Welcome to Campus Bridge {{user}}</p>
+        <p class="mb-2 text-3xl lg:text-5xl">Welcome to Campus Bridge {{user}}</p>
         {% else %}
-        <p class="mb-2 text-3xl lg:text-5xl text-white">Welcome to Campus Bridge </p>
+        <p class="mb-2 text-3xl lg:text-5xl">Welcome to Campus Bridge </p>
         {% endif %}
-        <p class="mb-10 text-white">Providing Services to fill every student's needs</p>
+        <p class="mb-10">Providing Services to fill every student's needs</p>
 
         <button onClick= 'location.href="{% url "shop" %}"' id='home-shopnow'>Start Shopping</button>
     </div>
