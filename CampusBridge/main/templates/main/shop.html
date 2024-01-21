@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% block content %}
-<div class="max-w-6xl mx-auto flex flex-wrap items-start py-10 px-6 xl:px-0">
+{% comment %} <div class="max-w-6xl mx-auto flex flex-wrap items-start py-10 px-6 xl:px-0">
     <div style="position: absolute; left: 9px;" class="overflow-auto filters w-full">
         <h3 class="mb-3 text-xl uppercase">Search</h3>
 
@@ -25,7 +25,7 @@
             </li>
         {% endfor %}
         </ul>
-    </div>
+    </div> {% endcomment %}
     <div class="products overflow-auto absolute top-28 right-0 w-3/4 flex ">
         {% for product in products %}
             <div class="w-56 p-4">

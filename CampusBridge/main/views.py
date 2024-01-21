@@ -5,12 +5,27 @@ from django.contrib.auth import authenticate, login as authlogin, logout as auth
 from django.contrib.auth.decorators import login_required
 from product.models import Product, Category
 from django.db.models import Q
+from service.models import College, Service, Service_Category
+
+categories = Category.objects.all()
+products = Product.objects.all()
+universities = College.objects.all()
+services = Service.objects.all()
+category_services = Service_Category.objects.all()
+
+footer_context = {
+    'products': products,
+    'Categories': categories,
+}
+
 
 def userlogin(request):
     if request.method == 'GET':
         print("User to be logged in")
         form = LoginForm()
-        return render(request, 'registration/login.html', {'form': form})
+        return render(request, 'registration/login.html', {'form': form, 'products': products,
+                'Categories': categories,
+                })
         
     if request.method == 'POST':
         form = LoginForm(request.POST)
@@ -25,11 +40,13 @@ def userlogin(request):
         else:
             form = LoginForm()
             print("User not created")
-            return render(request, 'registration/login.html', {'form': form})
+            return render(request, 'registration/login.html', {'form': form,'products': products,
+                'Categories': categories,})
     else:
         form = LoginForm()
         print("User not logged in")
-        return render(request, 'registration/login.html', {'form': form})
+        return render(request, 'registration/login.html', {'form': form,'products': products,
+                'Categories': categories,})
 
 
 
@@ -38,13 +55,17 @@ def userlogout(request):
     return redirect('login/')
 
 def index(request):
-    return render(request, 'main/index.html')
+    context ={'products': products,
+                'Categories': categories,
+                }
+    return render(request, 'main/index.html', context)
 
 def signup(request):
     if request.method == 'GET':
         print("User to be created")
         form = RegisterForm()
-        return render(request, 'registration/signup.html', {'form': form})
+        return render(request, 'registration/signup.html', {'form': form, 'products': products,
+                'Categories': categories,})
         
     if request.method == 'POST':
         form = RegisterForm(request.POST)
@@ -60,11 +81,13 @@ def signup(request):
         else:
             form = RegisterForm()
             print("User not created")
-            return render(request, 'registration/signup.html', {'form': form})
+            return render(request, 'registration/signup.html', {'form': form, 'products': products,
+                'Categories': categories,})
     else:
         form = RegisterForm()
         print("User not created")
-        return render(request, 'registration/signup.html', {'form': form})
+        return render(request, 'registration/signup.html', {'form': form, 'products': products,
+                'Categories': categories,})
 
 def shop(request):
     categories = Category.objects.all()
@@ -86,3 +109,14 @@ def shop(request):
     }
     return render(request, 'main/shop.html', context)
 
+def shop_service(request):
+    
+    context = {
+        'products': products,
+        'Categories': categories,
+        'universities': universities,
+        'services': services,
+        'category_services':category_services,
+    }
+    
+    return render(request, 'main/shop_service.html', context)

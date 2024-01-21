@@ -8,12 +8,12 @@
     <link rel = 'stylesheet' href='../../static/css/styles.css'>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <header class="flex justify-between items-center">
+    <header class="flex justify-between items-center ">
         <h2 class="logo"><span style="color: rgb(8, 28, 21)">Campus </span><span style="color: #fff;">Bridge</span></h2>
         <nav class="navigation flex">
             <a id="header-item" href="{% url "index" %}">Home</a>
             <a id="header-item" href="{% url "shop" %}">Shop</a>
-            <a id="header-item" href="#">Services</a>
+            <a id="header-item" href="{% url "shop_service" %}">Services</a>
             <a id="header-item" href="#">Contact</a>
             <div class="flex" id="options">
                 {% if user.is_authenticated %}
@@ -35,20 +35,79 @@
 </head>
 
 <body>
-    <div id="main-content" class="flex flex-col min-h-screen">
+    <div id="main-content" class="pb-8 m-0 h-full">
         <main class="flex-grow">
             {% block content %}
             {% endblock %}
         </main>
     </div>
 
-    <footer class="absolute bottom-0">
-        <div>
+    <footer id="main-footer-element" class="absolute bottom-0 justify-center h-0 mt-auto flex w-full">
+        <div class="flex flex-wrap">
             <div>
-                footer
+                <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
+                    Categories
+                </div>
+                <div>
+                    {% for Category in Categories %}
+                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                            <a href="{% url 'shop' %absoluteegory={{Category.slug}}">
+                            {{Category.name}}</a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
             <div>
-                footer
+                <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
+                    About
+                </div>
+                <div>
+                    {% for Category in Categories %}
+                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                            <a href="{% url 'shop' %}?category={{Category.slug}}">
+                            {{Category.name}}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
+                    Categories
+                </div>
+                <div>
+                    {% for Category in Categories %}
+                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                            <a href="{% url 'shop' %}?category={{Category.slug}}">
+                            {{Category.name}}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
+                    Categories
+                </div>
+                <div>
+                    {% for Category in Categories %}
+                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                            <a href="{% url 'shop' %}?category={{Category.slug}}">
+                            {{Category.name}}</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div>
+                <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
+                    Categories
+                </div>
+                <div>
+                    {% for Category in Categories %}
+                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                            <a href="{% url 'shop' %}?category={{Category.slug}}">
+                            {{Category.name}}</a>
+                        </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </footer>
