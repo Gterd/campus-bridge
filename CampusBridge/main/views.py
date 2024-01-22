@@ -7,6 +7,7 @@ from product.models import Product, Category
 from django.db.models import Q
 from service.models import College, Service, Service_Category
 
+
 categories = Category.objects.all()
 products = Product.objects.all()
 universities = College.objects.all()
@@ -113,10 +114,9 @@ def shop_service(request):
     
     context = {
         'products': products,
-        'Categories': categories,
         'universities': universities,
         'services': services,
-        'category_services':category_services,
+        'Categories':category_services,
     }
     
     return render(request, 'main/shop_service.html', context)

@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'profiles',
     'service',
     'vendor',
+    'sorl.thumbnail',
     
 ]
 
