@@ -1,0 +1,17 @@
+{
+     "rewrites": [
+        {"source": "/(.*)", "destination": "/"}
+    ]
+    "builds": [
+      {
+        "src": "CampusBridge/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "CampusBridge/wsgi.py"
+      }
+    ]
+}
