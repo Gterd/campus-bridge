@@ -111,12 +111,19 @@ def shop(request):
     return render(request, 'main/shop.html', context)
 
 def shop_service(request):
-    
+    universities = College.objects.all()
+    services = Service.objects.all()
+    category_services = Service_Category.objects.all()
+
     context = {
-        'products': products,
         'universities': universities,
         'services': services,
         'Categories':category_services,
     }
+    
+    Query = request.GET.get('query', '')
+    
+    if Query:
+        services = services.filter(Q(name__icontains=Query) | Q(description__icontains=Query))
     
     return render(request, 'main/shop_service.html', context)

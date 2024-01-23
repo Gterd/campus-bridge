@@ -90,8 +90,13 @@ WSGI_APPLICATION = 'CampusBridge.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:3Af5Bc6-B265EEbCgEAfBcfGddb*5CAd@viaduct.proxy.rlwy.net:41974/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '3Af5Bc6-B265EEbCgEAfBcfGddb*5CAd',
+        'HOST': 'viaduct.proxy.rlwy.net',
+        'PORT': 41974,
     }
 }
 
