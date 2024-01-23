@@ -4,36 +4,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-.main-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('../images/college-background.jpg');
-}   
+    font-family: 'montserrat', sans-serif;
+}  
 
 main {
     flex-grow: 1;
 }
 
 header {
+    top: 0rem;
+    overflow: hidden;
     position: fixed;
-    top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 6px 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1;
+    border-color: rgb(45, 106, 79);
+    border-style: solid;
+    border-bottom-width: 1px;
+    background-color: rgb(45, 106, 79);
 }
 
 .logo {
     font-size: 2em;
-    font-weight: 500;
+    font-weight: 650;
     color: #fff;
     user-select: none;
 }
@@ -47,16 +44,7 @@ header {
     margin-left: 40px;
     padding-top: 15px;
 }
-
-#header-item {
-    position: relative;
-    font-size: 1.1em;
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    margin-left: 40px;
-}
-
+    
 .logged-in-icons {
     position: relative;
     font-size: 1.1em;
@@ -70,11 +58,11 @@ header {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -6px;
+    bottom: 0px;
     width: 100%;
     height: 3px;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 4px;
     transform-origin: right;
     transform: scaleX(0);
     transition: transform .5s;
@@ -111,7 +99,7 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    border: none;
     outline: none;
     border-radius: 6px;
     cursor: pointer;
@@ -122,20 +110,15 @@ header {
     transition: .5s;
 }
 
-.navigation .btnLogin-popup:hover {
-    background: #fff;
-    color: #162938;
-
-}
-
 .wrapper {
+    margin-top: 30px;
     position: relative;
     width: 40%;
     height: 40%;
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid rgb(9, 68, 9);
     border-radius: 20px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,7 +132,7 @@ header {
 
 .form-box h2{
     font-size: 2em;
-    color: #162938;
+    color: rgb(9, 68, 9);
     text-align: center  ;
 }
 
@@ -157,7 +140,7 @@ header {
     position: relative;
     width: 100%;
     height: 50px;
-    border-bottom: 2px solid #162938;
+    border-bottom: 2px solid rgb(9, 68, 9);
     margin: 30px 0;
 }
 
@@ -167,7 +150,7 @@ header {
     left: 5px;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #162938;
+    color: rgb(45, 106, 79);
     font-weight: 500;
     pointer-events: none;
     transition: .5s;
@@ -183,11 +166,10 @@ header {
 .input-box input{
     width: 100%;
     height: 100%;
-    background: transparent;
     border: none;
     outline: none;
     font-size: 1em;
-    color: #162938;
+    color: rgb(9, 68, 9);
     font-weight: 600;
     padding: 0 35px 0 5px;
 }
@@ -196,13 +178,13 @@ header {
     position: absolute;
     right: 8px;
     font-size: 1.2em;
-    color: #162938;
+    color: rgb(9, 68, 9);
     line-height: 57px;
 }
 
 .remember-forgot {
     font-size: .9em;
-    color: #162938;
+    color: #fff;
     font-weight: 500;
     margin: -15px 0 15px;
     display: flex;
@@ -210,24 +192,23 @@ header {
 }
 
 .remember-forgot label input {
-    accent-color: #162938;
+    accent-color: #fff;
     margin-right: 3px;
 }
 
 .remember-forgot a{
-    color: #162938;
+    color: #fff;
     text-decoration: none;
 }
 
 .remember-forgot a:hover {
-    color: indigo;
     text-decoration: underline;
 }
 
 .btn {
     width: 100%;
     height: 45px;
-    background: #162938;
+    background: rgb(9, 68, 9);
     border: none;
     outline: none;
     border-radius: 6px;
@@ -237,16 +218,20 @@ header {
     font-weight: 500;
 }
 
+.btn:hover{
+    background: rgb(5, 44, 5);
+}
+
 .login-register {
     font-size: .9em;
-    color: #162938;
+    color: rgb(9, 68, 9);
     text-align: center;
     font-weight: 500;
     margin: 25px 0 10px;
 }
 
 .login-register p a {
-    color: #162938;
+    color: rgb(9, 68, 9);
     text-decoration: none;
     font-weight: 600;
 }
@@ -255,19 +240,20 @@ header {
     text-decoration: underline;
 }
 
-body.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem; 
+
+.navigation .btnLogin-popup:hover {
+    background: rgb(216, 243, 220);
+    color: rgba(0, 0, 0, .5);
+
 }
+
+
 body {
-    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     padding-top: 60px;
-    background: url('../images/college-background.jpg');
+    background: rgb(216, 243, 220);
+    min-height: 100%;
+    position: relative;
 }
-

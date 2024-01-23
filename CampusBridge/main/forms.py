@@ -45,7 +45,7 @@ class RegisterForm(UserCreationForm):
             'required':'',
         })
         self.fields['password1'].widget.attrs.update({
-            'id':'RegisterPassword',
+            'id':'RegisterPassword1',
             'type':"password",
             'required':'',
         })
