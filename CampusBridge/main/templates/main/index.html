@@ -1,6 +1,7 @@
 {% extends "main/base.html" %}
 {% block content %}
-<div style="color: rgb(45, 106, 79);" class="px-6 py-10 lg:py-20 bg-purple-none mt-20">
+
+<div style="color: #081C15;" class="px-6 py-10 lg:py-20 bg-purple-none mt-20">
     <div class="max-w-3xl mx-auto text-center">
         {% if user.is_authenticated %}
         <p class="mb-2 text-3xl lg:text-5xl">Welcome to Campus Bridge {{user}}</p>
@@ -9,7 +10,7 @@
         {% endif %}
         <p class="mb-10">Providing Services to fill every student's needs</p>
 
-        <button onClick= 'location.href="{% url "shop" %}"' id='home-shopnow'>Start Shopping</button>
+        <button class="border-green-800" onClick= 'location.href="{% url "shop" %}"' id='home-shopnow'>Start Shopping</button>
     </div>
 </div>
 {% endblock  %}

@@ -143,28 +143,21 @@
             </div>
             <div>
                 <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
-                    Categories
+                    Socials
                 </div>
-                <div>
-                    {% for Category in Categories %}
-                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
-                            <a href="{% url 'shop' %}?category={{Category.slug}}">
-                            {{Category.name}}</a>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div>
-                <div style="color: rgb(8, 28, 21)" class="font-bold px-2 pb-5 ml-20">
-                    Categories
-                </div>
-                <div>
-                    {% for Category in Categories %}
-                        <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
-                            <a href="{% url 'shop' %}?category={{Category.slug}}">
-                            {{Category.name}}</a>
-                        </div>
-                    {% endfor %}
+                <div class="space-y-4">
+                    <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                        <a href="#">
+                        Instagram</a>
+                    </div>
+                    <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                        <a href="#">
+                        Twitter</a>
+                    </div>
+                    <div style="color: rgb(45, 106, 79);" class="ml-20 text-sm px-2 py-1 hover:underline">
+                        <a href="#">
+                        Facebook</a>
+                    </div>
                 </div>
             </div>
         </div>
