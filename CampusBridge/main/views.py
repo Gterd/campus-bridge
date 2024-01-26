@@ -106,6 +106,7 @@ def shop(request):
     
     context = { 'products': products,
                 'Categories': categories,
+                'universities': universities,
                 'active_category': active_category
     }
     return render(request, 'main/shop.html', context)
