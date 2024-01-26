@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-ah-z)0hs^f$i!fhlq6ol+=*u1fgom^emeh1w80wraq2x6+j@8&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1','campusbridge.onrender.com']
 SESSION_COOKIE_AGE = 86500
 CART_SESSION_ID = 'cart'
 
