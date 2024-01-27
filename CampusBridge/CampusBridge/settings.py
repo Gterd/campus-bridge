@@ -87,7 +87,7 @@ DATABASES = {
     "default": dj_database_url.parse(env('DATABASE_URL'))
     
 
-}
+}   
 
 
 # Password validation
@@ -125,6 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_FILES_DIRS = [
+    BASE_DIR /'main'/'static'
+]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
 

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +51,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document
     </title>
-    <link rel = 'stylesheet' href='../../static/css/styles.css'>
+    <link rel = 'stylesheet' href={% static "css/styles.css" %}>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <header class="flex justify-between items-center ">
@@ -163,7 +164,7 @@
         </div>
     </footer>
     <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
-    <script src='/static/js/script.js'></script>
+    <script src={% static "js/script.js" %}></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://apis.google.com/js/platform.js" async defer></script>
