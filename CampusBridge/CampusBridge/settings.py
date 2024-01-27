@@ -1,6 +1,7 @@
 import dj_database_url
 from pathlib import Path    
 import environ
+import os
 
 env = environ.Env()
 
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -129,6 +131,13 @@ STATIC_URL = 'static/'
 STATIC_FILES_DIRS = [
     BASE_DIR /'main'/'static'
 ]
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Turn on WhiteNoise storage backend that takes care of compressing static files
+# and creating unique names for each version so they can safely be cached forever.
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR /'media'
